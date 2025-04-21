@@ -280,7 +280,15 @@ end
 legend(legendEntries, 'Location', 'best');
 set(gca, 'FontSize', 12);
 `,
-    '8. Impact of AWGN noise (User-defined Simulink)': `NO CODE, THIS QUESTION NEEDS BLOCK DIAGRAM ONLY, CLICK ON VIEW GRAPH TO SEE THE OUTPUT`,
+    '8. Impact of AWGN noise (User-defined Simulink)': `%code for block 1
+    function y = fcn(d1,d2)
+
+y = sqrt(d1)*randn(size(d2));
+
+%code for block 2
+function y = fcn(f,t)
+
+y = sin(2*pi*f*t);`,
     '9. BER vs SNR in AWGN (User-defined Simulink)': `NO CODE, THIS QUESTION NEEDS BLOCK DIAGRAM ONLY, CLICK ON VIEW GRAPH TO SEE THE OUTPUT`,
     '10. BER vs SNR in Rayleigh fading (User-defined Simulink)': `NO CODE, THIS QUESTION NEEDS BLOCK DIAGRAM ONLY, CLICK ON VIEW GRAPH TO SEE THE OUTPUT`,
   }
