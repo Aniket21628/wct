@@ -21,7 +21,26 @@ function App() {
 
   const codes = {
     '1. Digital Modulation (ASK, FSK, PSK)': `NO CODE, THIS QUESTION NEEDS BLOCK DIAGRAM ONLY, CLICK ON VIEW GRAPH TO SEE THE OUTPUT`,
-    '2. Impact of AWGN noise on signal (Plot)': `numBits = 1e6; % Number of bits
+    '2. Impact of AWGN noise on signal (Plot)': `fs = 1000;
+t = 0:1/fs:1;
+f=10;
+x=sin(2*pi*f*t);
+figure;
+plot(t,x);
+title('Origininal Signal');
+xlabel('Time(s)');
+ylabel('Amplitude');
+grid on;
+snr=10;
+y=awgn(x,snr);
+figure;
+plot(t,y);
+title('Recieved Signal with AWGN');
+xlabel('Time(s)');
+ylabel('Amplitude');
+grid on;`,
+    '3. BER vs SNR in AWGN noise': `
+    numBits = 1e6; % Number of bits
 snrRange = 0:1:15; % SNR values in dB
 berSimulated = zeros(size(snrRange)); % Store simulated BER
 berTheoretical = zeros(size(snrRange)); % Store theoretical BER
@@ -51,25 +70,6 @@ xlabel('SNR (dB)');
 ylabel('Bit Error Rate (BER)');
 title('BER vs. SNR for BPSK in AWGN');
 legend('BER');
-`,
-    '3. BER vs SNR in AWGN noise': `fs = 1000;
-t = 0:1/fs:1;
-f=10;
-x=sin(2*pi*f*t);
-figure;
-plot(t,x);
-title('Origininal Signal');
-xlabel('Time(s)');
-ylabel('Amplitude');
-grid on;
-snr=10;
-y=awgn(x,snr);
-figure;
-plot(t,y);
-title('Recieved Signal with AWGN');
-xlabel('Time(s)');
-ylabel('Amplitude');
-grid on;
 `,
     '4. Rayleigh fading channel generation': `% Parameters
 s = 1; % Sigma (scale parameter)
