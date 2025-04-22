@@ -310,8 +310,7 @@ y = sin(2*pi*f*t);`,
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#001f3f', color: '#fff', fontFamily: 'Segoe UI' }}>
-      <h2 style={{ color: '#FFD700' }}>Simulink MATLAB Code Viewer</h2>
-
+      
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px' }}>
         {topics.map((topic, index) => (
           <button
